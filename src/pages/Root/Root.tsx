@@ -10,11 +10,11 @@ export const Root = () => {
     e.preventDefault();
     setValue('');
     const [firstTime, secondTime] = value.split(' ');
-    await navigator.clipboard.writeText(
-      `Kill roshan in ${value}: respawn from ${+firstTime + 8}:${secondTime} to ${
-        +firstTime + 11
-      }:${secondTime}`,
-    );
+    const resultText = `Kill roshan in ${value}: respawn from ${+firstTime + 8}:${secondTime} to ${
+      +firstTime + 11
+    }:${secondTime}`;
+    await navigator.clipboard.writeText(resultText);
+    alert(resultText);
   };
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
